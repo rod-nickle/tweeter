@@ -6,12 +6,17 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5em;
+  position: fixed; /* Fixes the navbar to the top */
+  top: 0; /* Positions it at the top of the viewport */
+  left: 0; /* Aligns it to the left */
+  right: 0; /* Aligns it to the right */
+  z-index: 1000; /* Ensures it stays above other content */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .container-write-a-tweet {
@@ -27,3 +32,4 @@ nav {
 .fa-solid {
   color: red;
 }
+
