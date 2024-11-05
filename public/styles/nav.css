@@ -19,3 +19,11 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
+.nav-title {
+  font-family: 'Bungee', sans-serif;
+}
+
+.fa-solid {
+  color: red;
+}
