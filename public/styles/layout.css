@@ -30,7 +30,7 @@ body {
 */ 
 
 main {
-  background-color: #f4f1ec;
+  background-color: inherit;
   width: 90%;
   margin: 0 auto;
 }

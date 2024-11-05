@@ -13,7 +13,7 @@ nav {
   z-index: 1000; /* Ensures it stays above other content */
 }
 
-.container {
+.container-nav {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;

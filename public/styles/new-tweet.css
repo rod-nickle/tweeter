@@ -1,0 +1,29 @@
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  font-family: 'Bungee', sans-serif;
+  padding: 10px 0px 0px 0px;
+}
+
+.tweet-button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  border: 0;
+}
+
+.tweet-label-text {
+  display: flex;
+  flex-direction: column;
+  /* border: 1em; */
+}
+
+.tweet-text-box {
+  background-color: inherit;
+    font-size: 16px;
+    height: 50px;
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 5px;
+    resize: none; 
+}

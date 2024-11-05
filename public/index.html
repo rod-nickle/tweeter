@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,7 +36,7 @@
 
   <!-- Top nav bar (fixed) -->
   <nav>
-    <div class="container">
+    <div class="container-nav">
       <span class="nav-title">TWEETER</span>
       <div class="container-write-a-tweet">
         <span><strong>Write</strong> a new tweet</span>
@@ -56,11 +57,20 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main>
-    <h1>Cupcake ipsum dolor sit amet</h1>
-    <p>Apple pie ice cream marzipan biscuit jelly-o tiramisu danish. Gummies powder macaroon marzipan sesame snaps chupa chups cake. Gummies dragée soufflé powder cake gummies marshmallow chocolate cake. Topping gingerbread candy canes macaroon shortbread cotton candy donut dessert jelly-o. Chocolate sugar plum sweet roll pudding shortbread wafer toffee topping. Chocolate cake fruitcake croissant donut wafer gummi bears dessert chocolate gingerbread. Jelly tiramisu jelly-o oat cake dessert cake fruitcake toffee tiramisu. Chupa chups candy danish toffee sweet liquorice sugar plum chocolate cake jelly-o. Sweet tootsie roll jujubes cotton candy marshmallow cupcake macaroon. Chocolate sweet cupcake sugar plum dessert pie topping sesame snaps caramels. Liquorice muffin apple pie cookie bonbon tiramisu pudding. Wafer tart chocolate cake gingerbread jujubes croissant. Biscuit tootsie roll bonbon tart gummi bears fruitcake.</p>
-    <p>Jelly-o apple pie ice cream apple pie chocolate cake oat cake tart. Croissant cotton candy bear claw toffee oat cake pie. Brownie donut tootsie roll gingerbread halvah tiramisu. Ice cream shortbread marshmallow pudding gummies topping cake topping candy canes. Marzipan soufflé cake soufflé biscuit. Jujubes apple pie apple pie candy canes apple pie. Chocolate cotton candy croissant dessert chocolate bonbon jelly. Tootsie roll jelly-o croissant macaroon jelly beans gingerbread marshmallow. Croissant croissant pastry wafer pudding. Cake ice cream croissant pie soufflé cupcake pudding. Cake cake pie fruitcake lemon drops pastry danish. Powder jelly beans ice cream danish topping. Liquorice jelly gummi bears oat cake chupa chups brownie liquorice icing. Dragée soufflé caramels chupa chups biscuit cheesecake.</p>
-
+  <main class="container">
+      <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets" method="POST">
+        <div class="tweet-label-text">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea class="tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
+        </div>
+        <div class="tweet-footer">
+          <button class="tweet-button" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 
 </body>
