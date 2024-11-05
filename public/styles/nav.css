@@ -1,0 +1,21 @@
+nav {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5em;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container-write-a-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
