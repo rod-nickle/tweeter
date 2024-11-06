@@ -12,6 +12,10 @@
   padding: 10px;
 }
 
+.old-tweet-section-mouseover {
+  box-shadow: 4px 4px 8px #4056A1;
+} 
+
 .old-tweet-header {
   display: flex;
   justify-content: space-between;
@@ -51,6 +55,11 @@
 .old-tweet-timestamp {
   font-size: 16px;
 }
+
 .fa-flag, .fa-retweet, .fa-heart {
   color: #4056A1;
+}
+
+.button-mouseover {
+  color: #FFD43B;
 }

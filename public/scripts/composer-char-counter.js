@@ -5,13 +5,12 @@ $(document).ready(function() {
   // The maximum length is 140 chars.  Change the counter color
   // to red when the 140 char limit is exceeded.
   $("#tweet-text").on("input", function() {
-    //const counterElement = "output[name='counter']";
     const tweetText = $(this).val();
     const tweetTextLength = tweetText.length;
     const tweetTextCharsRemaining = 140 - tweetTextLength;
-  
-    let $form = $(this).closest("form");
-    let $counter = $form.find("output[name='counter']");
+    const $form = $(this).closest("form");
+    const $counter = $form.find("output[name='counter']");
+    
     if ($counter) {
       $counter.val(tweetTextCharsRemaining);
       // This class will change the counter color to red.
