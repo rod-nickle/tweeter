@@ -6,11 +6,11 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 1.5em;
-  position: fixed; /* Fixes the navbar to the top */
-  top: 0; /* Positions it at the top of the viewport */
-  left: 0; /* Aligns it to the left */
-  right: 0; /* Aligns it to the right */
-  z-index: 1000; /* Ensures it stays above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .container-nav {
@@ -29,7 +29,7 @@ nav {
   font-family: 'Bungee', sans-serif;
 }
 
-.fa-solid {
+.fa-angles-down {
   color: red;
 }
 

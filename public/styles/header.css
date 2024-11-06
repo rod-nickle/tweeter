@@ -1,4 +1,4 @@
-header {
+.header {
   height: 400px;
   width: 100%;
   background-color: #a18b40;
@@ -9,7 +9,7 @@ header {
   background-image: url("../images/transparent-texture-grid.png");
 }
 
-.username {
+.current-user {
   color: #FFFFFF;
 }
 

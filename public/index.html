@@ -18,10 +18,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -47,30 +48,52 @@
   </nav>
 
   <!-- Header -->
-  <header>
+  <div class="header">
     <div class="avatar">
       <img src="/images/profile-hex.png">
     </div>
-    <br>
-    <div class="username">
+    <div class="current-user">
       <h2>Rod Nickle</h2>
     </div>
-  </header>
+  </div>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-      <section class="new-tweet">
+
+    <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST">
         <div class="tweet-label-text">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea class="tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea class="tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
         </div>
         <div class="tweet-footer">
           <button class="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+
+    <section class="old-tweet-section">
+      <article>
+        <header class="old-tweet-header">
+          <div class="old-tweet-userid">
+            <img class="avatar-small" src="/images/profile-hex.png">
+            <span>Rossa Frilli</span>
+          </div>
+          <span class="old-tweet-handle">@Frilli20</span>
+        </header>
+        <div class="old-tweet">
+          <textarea class="old-tweet-text-box">All that glitters is not gold.</textarea>
+        </div>
+        <footer class="old-tweet-footer">
+          <span class="old-tweet-timestamp"> just now</span>
+          <div class="old-tweet-button-bar">
+            <i class="fa-solid fa-flag fa-2xs"></i>
+            <i class="fa-solid fa-retweet fa-2xs"></i>
+            <i class="fa-solid fa-heart fa-2xs"></i>
+        </footer>
+      </article>
     </section>
   </main>
 
