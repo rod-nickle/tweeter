@@ -1,3 +1,11 @@
+/**
+ * Global Variables
+ */
+const hostName = "http://localhost:8080";
+
+/**
+ * Event Listeners
+ */
 $(document).ready(function () {
   /**
    * Make an HTTP GET request to fetch the tweets from the database and display them in our web page.
@@ -17,23 +25,21 @@ $(document).ready(function () {
         return;
       }
   
-  
       const data = $('#tweet-text').serialize()
-      const url = "http://localhost:8080/tweets";
-  
-      postTweet(url, data);
+      postTweet(data);
     })
 });
 
 
 /**
- * Asynchronous Ajax GET request to fetch the tweets from the database and display them in our web page.
+ * Asynchronous Ajax GET request to fetch the tweets from the database and display them on the web page.
  */
 const loadTweets = function () { 
   $.ajax({
-    url: "http://localhost:8080/tweets",
+    url: `${hostName}/tweets`,
     method: 'GET',
     success: function (data) {
+      // Display the tweets on the web page.
       renderTweets(data);
     },
     error: function (xhr, status, error) {
@@ -45,18 +51,16 @@ const loadTweets = function () {
 
 /**
  * Asynchronous Ajax POST to create a tweet.
- * @param {string} url 
  * @param {string} data 
  */
-const postTweet = function (url, data) {
+const postTweet = function (data) {
   $.ajax({
-    url: url,
+    url:`${hostName}/tweets`,
     method: 'POST',
     data: data,
     success: function (response) {
-      console.log("SUCCESS", response);
-
-      // Refetch the tweets after the tweet has been POSTed.
+      // Clear the newly entered tweet and refetch the tweets.
+      $('#tweet-text').val(null);
       loadTweets();
     },
     error: function (xhr, status, error) {
@@ -98,12 +102,13 @@ const createTweetElement = function (tweet) {
 
 
 /**
- * loops through tweets
- * calls createTweetElement for each tweet
- * takes return value and appends it to the tweets container
+ * Loops through tweets
+ * Calls createTweetElement for each tweet
+ * Takes return value and prepends it to the tweets container
  * @param {[object]} tweets 
  */
 const renderTweets = function (tweets) {
+  $('#tweets-container').empty();
   for (tweet of tweets){
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
