@@ -1,5 +1,3 @@
-const { loadTweets } = require("./client");
-
 $(document).ready(function () {
   
   /**
