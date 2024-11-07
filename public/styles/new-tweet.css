@@ -18,12 +18,12 @@
 
 .tweet-text-box {
   background-color: inherit;
-    font-size: 16px;
-    height: 65px;
-    border: none;
-    border-bottom: 3px solid black;
-    padding: 5px;
-    resize: none; 
+  font-size: 16px;
+  height: 65px;
+  border: none;
+  border-bottom: 3px solid black;
+  padding: 5px;
+  resize: none;
 }
 
 .counter-negative {

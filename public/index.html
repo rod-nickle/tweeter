@@ -30,9 +30,7 @@
   <!-- App JS -->
   <script type="text/javascript" defer src="/scripts/client.js"></script>
   <script type="text/javascript" defer src="/scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" defer src="/scripts/mouseover.js"></script>
-
-
+  
 </head>
 
 <body>
@@ -63,7 +61,8 @@
 
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
+      <!-- <form action="/tweets" method="POST"> -->
+      <form class="new-tweet-form">
         <div class="tweet-label-text">
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
