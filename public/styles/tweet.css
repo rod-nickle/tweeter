@@ -32,6 +32,7 @@
   color: lightgray;
   font-weight: bolder;
 }
+
 .tweet-box {
   display: flex;
   flex-direction: column;
@@ -42,7 +43,8 @@
   background-color: inherit;
   font-size: 16px;
   border: none;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid black; padding-bottom: 10px;
+  margin: 8px 0px;
   resize: none;
 }
 

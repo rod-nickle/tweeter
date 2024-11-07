@@ -24,14 +24,18 @@
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" defer src="/scripts/client.js"></script>
   <script type="text/javascript" defer src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" defer src="/scripts/post-tweet.js"></script>
-  
+
 </head>
 
 <body>
@@ -60,9 +64,9 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
+    <!-- New Tweet Section -->
     <section class="new-tweet-container">
       <h2>Compose Tweet</h2>
-      <!-- <form action="/tweets" method="POST"> -->
       <form class="new-tweet-form">
         <div class="new-tweet">
           <label for="tweet-text">What are you humming about?</label>
@@ -75,26 +79,9 @@
       </form>
     </section>
 
+    <!-- Past Tweets Section -->
+    <!-- Articles are appended here when the page is loaded.  See loadTweets(). -->
     <section id="tweets-container">
-      <!-- <article class="tweets-article">
-        <header class="tweets-header">
-          <div class="tweets-user">
-            <img class="avatar-small" src="/images/profile-hex.png">
-            <span>Rossa Frilli</span>
-          </div>
-          <span class="tweets-handle">@Frilli20</span>
-        </header>
-        <div class="tweet-box">
-          <textarea class="tweet-text-box">All that glitters is not gold.</textarea>
-        </div>
-        <footer class="tweets-footer">
-          <span class="tweets-timestamp"> just now</span>
-          <div class="tweets-button-bar">
-            <i class="fa-solid fa-flag fa-2xs hover-button"></i>
-            <i class="fa-solid fa-retweet fa-2xs hover-button"></i>
-            <i class="fa-solid fa-heart fa-2xs hover-button"></i>
-        </footer>
-      </article> -->
     </section>
 
   </main>

@@ -7,7 +7,7 @@ $(document).ready(function () {
     event.preventDefault();
     
     const data = $('#tweet-text').serialize()
-    const url = `http://localhost:8080/tweets`;
+    const url = "http://localhost:8080/tweets";
 
     postTweet(url, data);
   })
@@ -20,8 +20,6 @@ $(document).ready(function () {
  * @param {string} data 
  */
 const postTweet = function (url, data) {
-  console.log(url, data);
-
   $.ajax({
     url: url,
     method: 'POST',
