@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  // Make an HTTP GET request to fetch the tweets from the database and display them in our web page.
+  /**
+   * Make an HTTP GET request to fetch the tweets from the database and display them in our web page.
+   */
   loadTweets();
 });
 
@@ -65,3 +67,4 @@ const loadTweets = function () {
 }
 
 
+module.exports = { loadTweets};
