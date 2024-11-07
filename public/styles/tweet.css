@@ -3,7 +3,7 @@
   height: 75px;
 }
 
-.tweets-container {
+.tweets-article {
   margin: 30px 0px;
   border: 3px solid black;
   padding: 10px 0px 10px 0px;
@@ -12,7 +12,7 @@
   padding: 10px;
 }
 
-.tweets-container:hover {
+.tweets-article:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 } 
 

@@ -4,29 +4,32 @@
  * @returns 
  */
 const createTweetElement = function (tweet) {
-  const $tweet = $(`<article class="tweet">Hello world</article>`);
+  // const $tweet = $(`<article class="tweets-article">Hello world</article>`);
+
+
+const $tweet = $(`
+
+  <article class="tweets-article">
+    <header class="tweets-header">
+      <div class="tweets-user">
+        <img class="avatar-small" src="${tweet.user.avatars}">
+        <span>${tweet.user.name}</span>
+      </div>
+      <span class="tweets-handle">${tweet.user.handle}</span>
+    </header>
+    <div class="tweet-box">
+      <textarea class="tweet-text-box">${tweet.content.text}</textarea>
+    </div>
+    <footer class="tweets-footer">
+      <span class="tweets-timestamp">${tweet.created_at}</span>
+      <div class="tweets-button-bar">
+        <i class="fa-solid fa-flag fa-2xs hover-button"></i>
+        <i class="fa-solid fa-retweet fa-2xs hover-button"></i>
+        <i class="fa-solid fa-heart fa-2xs hover-button"></i>
+    </footer>
+  </article>`);
 
   return $tweet;
-
-//   <article>
-//   <header class="old-tweet-header">
-//     <div class="old-tweet-userid">
-//       <img class="avatar-small" src="/images/profile-hex.png">
-//       <span>Rossa Frilli</span>
-//     </div>
-//     <span class="old-tweet-handle">@Frilli20</span>
-//   </header>
-//   <div class="old-tweet">
-//     <textarea class="old-tweet-text-box">All that glitters is not gold.</textarea>
-//   </div>
-//   <footer class="old-tweet-footer">
-//     <span class="old-tweet-timestamp"> just now</span>
-//     <div class="old-tweet-button-bar">
-//       <i class="fa-solid fa-flag fa-2xs hover-button"></i>
-//       <i class="fa-solid fa-retweet fa-2xs hover-button"></i>
-//       <i class="fa-solid fa-heart fa-2xs hover-button"></i>
-//   </footer>
-// </article>
 }
 
 
@@ -46,6 +49,6 @@ const tweetData = {
 const $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
-console.log("I am here");
-console.log($tweet); // to see what it looks like
+// console.log("I am here");
+// console.log($tweet); // to see what it looks like
 $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
