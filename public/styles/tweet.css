@@ -3,7 +3,7 @@
   height: 75px;
 }
 
-.old-tweet-section {
+.tweets-container {
   margin: 30px 0px;
   border: 3px solid black;
   padding: 10px 0px 10px 0px;
@@ -12,33 +12,33 @@
   padding: 10px;
 }
 
-.old-tweet-section:hover {
+.tweets-container:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 } 
 
-.old-tweet-header {
+.tweets-header {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
   align-items: center;
 }
 
-.old-tweet-userid {
+.tweets-user {
   display: flex;
   align-items: center;
 }
 
-.old-tweet-handle {
+.tweets-handle {
   color: lightgray;
   font-weight: bolder;
 }
-.old-tweet {
+.tweet-box {
   display: flex;
   flex-direction: column;
   padding: 10px 2px;
 }
 
-.old-tweet-text-box {
+.tweet-text-box {
   background-color: inherit;
   font-size: 16px;
   border: none;
@@ -46,13 +46,13 @@
   resize: none;
 }
 
-.old-tweet-footer {
+.tweets-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.old-tweet-timestamp {
+.tweets-timestamp {
   font-size: 16px;
 }
 
@@ -60,6 +60,6 @@
   color: #4056A1;
 }
 
-.old-tweet-button-bar i:hover {
+.tweets-button-bar i:hover {
   color: #FFD43B;
 }

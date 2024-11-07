@@ -1,4 +1,4 @@
-.tweet-footer {
+.new-tweet-footer {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
@@ -10,13 +10,13 @@
   background-color: #4056A1;
 }
 
-.tweet-label-text {
+.new-tweet {
   display: flex;
   flex-direction: column;
   border: none;
 }
 
-.tweet-text-box {
+.new-tweet-text-box {
   background-color: inherit;
   font-size: 16px;
   height: 65px;

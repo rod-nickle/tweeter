@@ -30,6 +30,7 @@
   <!-- App JS -->
   <script type="text/javascript" defer src="/scripts/client.js"></script>
   <script type="text/javascript" defer src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" defer src="/scripts/post-tweet.js"></script>
   
 </head>
 
@@ -59,36 +60,36 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section class="new-tweet">
+    <section class="new-tweet-container">
       <h2>Compose Tweet</h2>
       <!-- <form action="/tweets" method="POST"> -->
       <form class="new-tweet-form">
-        <div class="tweet-label-text">
+        <div class="new-tweet">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea class="tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
+          <textarea class="new-tweet-text-box" name="text" id="tweet-text" required="true"></textarea>
         </div>
-        <div class="tweet-footer">
+        <div class="new-tweet-footer">
           <button class="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
 
-    <section class="old-tweet-section">
+    <section class="tweets-container">
       <article>
-        <header class="old-tweet-header">
-          <div class="old-tweet-userid">
+        <header class="tweets-header">
+          <div class="tweets-user">
             <img class="avatar-small" src="/images/profile-hex.png">
             <span>Rossa Frilli</span>
           </div>
-          <span class="old-tweet-handle">@Frilli20</span>
+          <span class="tweets-handle">@Frilli20</span>
         </header>
-        <div class="old-tweet">
-          <textarea class="old-tweet-text-box">All that glitters is not gold.</textarea>
+        <div class="tweet-box">
+          <textarea class="tweet-text-box">All that glitters is not gold.</textarea>
         </div>
-        <footer class="old-tweet-footer">
-          <span class="old-tweet-timestamp"> just now</span>
-          <div class="old-tweet-button-bar">
+        <footer class="tweets-footer">
+          <span class="tweets-timestamp"> just now</span>
+          <div class="tweets-button-bar">
             <i class="fa-solid fa-flag fa-2xs hover-button"></i>
             <i class="fa-solid fa-retweet fa-2xs hover-button"></i>
             <i class="fa-solid fa-heart fa-2xs hover-button"></i>
