@@ -12,8 +12,9 @@
   padding: 10px;
 }
 
-.old-tweet-section-mouseover {
-  box-shadow: 4px 4px 8px #4056A1;
+.old-tweet-section:hover {
+  /* box-shadow: 4px 4px 8px #4056A1; */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 } 
 
 .old-tweet-header {
@@ -60,6 +61,7 @@
   color: #4056A1;
 }
 
-.button-mouseover {
+/* .button-mouseover { */
+.old-tweet-button-bar i:hover {
   color: #FFD43B;
 }
