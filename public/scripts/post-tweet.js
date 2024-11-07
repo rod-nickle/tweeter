@@ -16,8 +16,8 @@ $(document).ready(function () {
 
 /**
  * Asynchronous Ajax POST to create a tweet.
- * @param {*} url 
- * @param {*} data 
+ * @param {string} url 
+ * @param {string} data 
  */
 const postTweet = function (url, data) {
   console.log(url, data);
