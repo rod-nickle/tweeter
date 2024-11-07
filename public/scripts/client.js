@@ -56,7 +56,6 @@ const loadTweets = function () {
     url: "http://localhost:8080/tweets",
     method: 'GET',
     success: function (data) {
-      console.log(data);
       renderTweets(data);
     },
     error: function (xhr, status, error) {

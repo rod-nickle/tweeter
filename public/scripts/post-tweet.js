@@ -6,6 +6,18 @@ $(document).ready(function () {
   $('.new-tweet-form').on('submit', function (event) {
     event.preventDefault();
     
+    const text = $('#tweet-text').val()
+
+    if (!text) {
+      alert("Message cannot be empty.");
+      return;
+    }    
+   
+    if (text.length > 140) {
+      alert("Message must not exceed 140 characters.");
+      return;
+    }
+    
     const data = $('#tweet-text').serialize()
     const url = "http://localhost:8080/tweets";
 
