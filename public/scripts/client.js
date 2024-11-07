@@ -25,7 +25,7 @@ $(document).ready(function () {
         return;
       }
   
-      const data = $('#tweet-text').serialize()
+      const data = $(this).serialize();
       postTweet(data);
     })
 });
@@ -76,6 +76,8 @@ const postTweet = function (data) {
  * @returns {string} The DOM structure for a tweet
  */
 const createTweetElement = function (tweet) {
+  // This strips out any risky XSS content.
+  const $tweetContent = $("<p class='tweet-text-box'>").text(tweet.content.text);
   const $tweet = $(`
     <article class="tweets-article">
       <header class="tweets-header">
@@ -86,7 +88,6 @@ const createTweetElement = function (tweet) {
         <span class="tweets-handle">${tweet.user.handle}</span>
       </header>
       <div class="tweet-box">
-        <p class="tweet-text-box">${tweet.content.text}</p>
       </div>
       <footer class="tweets-footer">
         <span class="tweets-timestamp">${timeago.format(tweet.created_at)}</span>
@@ -96,6 +97,9 @@ const createTweetElement = function (tweet) {
           <i class="fa-solid fa-heart fa-2xs hover-button"></i>
       </footer>
     </article>`);
+
+    // Put the safe tweet under the "tweet-box" div element.
+    $tweet.find(".tweet-box").append($tweetContent);
 
   return $tweet;
 }
