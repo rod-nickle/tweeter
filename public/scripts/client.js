@@ -14,33 +14,33 @@ $(document).ready(function () {
 
   hideErrorMessage();
 
-    /**
-   *  Handle the Form Submission.
-   */
-    $(".new-tweet-form").on("submit", function (event) {
-      event.preventDefault();
-      
-      const tweet = $("#tweet-text").val()
-  
-      // Display an error message and Exit if the Tweet is empty or exceeds the maximum number of characters.
-      const errorMessage = isTweetValid(tweet);
-      if (errorMessage) {
-        showErrorMessage(errorMessage);
-        return;
-      } else {
-        hideErrorMessage();
-      }
+  /**
+ *  Handle the Form Submission.
+ */
+  $(".new-tweet-form").on("submit", function (event) {
+    event.preventDefault();
 
-      const data = $(this).serialize();
-      postTweet(data);
-    })
+    const tweet = $("#tweet-text").val()
+
+    // Display an error message and Exit if the Tweet is empty or exceeds the maximum number of characters.
+    const errorMessage = isTweetValid(tweet);
+    if (errorMessage) {
+      showErrorMessage(errorMessage);
+      return;
+    } else {
+      hideErrorMessage();
+    }
+
+    const data = $(this).serialize();
+    postTweet(data);
+  })
 });
 
 
 /**
  * Asynchronous Ajax GET request to fetch the tweets from the database and display them on the web page.
  */
-const loadTweets = function () { 
+const loadTweets = function () {
   $.ajax({
     url: `${hostName}/tweets`,
     method: "GET",
@@ -61,7 +61,7 @@ const loadTweets = function () {
  */
 const postTweet = function (data) {
   $.ajax({
-    url:`${hostName}/tweets`,
+    url: `${hostName}/tweets`,
     method: "POST",
     data: data,
     success: function (response) {
@@ -104,8 +104,8 @@ const createTweetElement = function (tweet) {
       </footer>
     </article>`);
 
-    // Put the safe tweet under the "tweet-box" div element.
-    $tweet.find(".tweet-box").append($tweetContent);
+  // Put the safe tweet under the "tweet-box" div element.
+  $tweet.find(".tweet-box").append($tweetContent);
 
   return $tweet;
 }
@@ -119,7 +119,7 @@ const createTweetElement = function (tweet) {
  */
 const renderTweets = function (tweets) {
   $("#tweets-container").empty();
-  for (tweet of tweets){
+  for (tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $("#tweets-container").prepend($tweet);
   }
@@ -140,24 +140,24 @@ const isTweetValid = function (tweet) {
   tweet = tweet.trim();
 
   if (!tweet) {
-    return("Message cannot be empty.");
-  }    
- 
+    return ("Message cannot be empty.");
+  }
+
   if (tweet.length > 140) {
-    return("Message must not exceed 140 characters.");
+    return ("Message must not exceed 140 characters.");
   }
 
   return errorMessage;
 }
 
 
-const showErrorMessage = function(errorMessage) {
+const showErrorMessage = function (errorMessage) {
   console.log(errorMessage);
   $("#error-message-container").slideDown(400);
   $("#error-message").text(errorMessage);
 };
 
-const hideErrorMessage = function() {
+const hideErrorMessage = function () {
   $("#error-message-container").slideUp(400);
   $("#error-message").text("");
 };

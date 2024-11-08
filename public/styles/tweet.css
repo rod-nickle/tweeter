@@ -14,7 +14,7 @@
 
 .tweets-article:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-} 
+}
 
 .tweets-header {
   display: flex;
@@ -43,7 +43,8 @@
   background-color: inherit;
   font-size: 16px;
   border: none;
-  border-bottom: 3px solid black; padding-bottom: 10px;
+  border-bottom: 3px solid black;
+  padding-bottom: 10px;
   margin: 8px 0px;
 }
 
@@ -57,7 +58,9 @@
   font-size: 16px;
 }
 
-.fa-flag, .fa-retweet, .fa-heart {
+.fa-flag,
+.fa-retweet,
+.fa-heart {
   color: #4056A1;
 }
 
