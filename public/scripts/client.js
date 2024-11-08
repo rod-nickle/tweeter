@@ -12,19 +12,25 @@ $(document).ready(function () {
    */
   loadTweets();
 
+  hideErrorMessage();
+
     /**
    *  Handle the Form Submission.
    */
-    $('.new-tweet-form').on('submit', function (event) {
+    $(".new-tweet-form").on("submit", function (event) {
       event.preventDefault();
       
-      const tweet = $('#tweet-text').val()
+      const tweet = $("#tweet-text").val()
   
-      // Exit if the Tweet is empty or exceeds the maximum number of characters.
-      if (!isTweetValid(tweet)) {
+      // Display an error message and Exit if the Tweet is empty or exceeds the maximum number of characters.
+      const errorMessage = isTweetValid(tweet);
+      if (errorMessage) {
+        showErrorMessage(errorMessage);
         return;
+      } else {
+        hideErrorMessage();
       }
-  
+
       const data = $(this).serialize();
       postTweet(data);
     })
@@ -37,7 +43,7 @@ $(document).ready(function () {
 const loadTweets = function () { 
   $.ajax({
     url: `${hostName}/tweets`,
-    method: 'GET',
+    method: "GET",
     success: function (data) {
       // Display the tweets on the web page.
       renderTweets(data);
@@ -56,11 +62,11 @@ const loadTweets = function () {
 const postTweet = function (data) {
   $.ajax({
     url:`${hostName}/tweets`,
-    method: 'POST',
+    method: "POST",
     data: data,
     success: function (response) {
       // Clear the newly entered tweet and refetch the tweets.
-      $('#tweet-text').val(null);
+      $("#tweet-text").val(null);
       loadTweets();
     },
     error: function (xhr, status, error) {
@@ -112,10 +118,10 @@ const createTweetElement = function (tweet) {
  * @param {[object]} tweets 
  */
 const renderTweets = function (tweets) {
-  $('#tweets-container').empty();
+  $("#tweets-container").empty();
   for (tweet of tweets){
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').prepend($tweet);
+    $("#tweets-container").prepend($tweet);
   }
 }
 
@@ -125,21 +131,33 @@ const renderTweets = function (tweets) {
  * If either of these conditions is met, the function should return false and display an appropriate alert message to the user. 
  * If the tweet is valid, the function should return true.
  * @param {string} tweet 
- * @returns {boolean} true if the tweet is valid; otherwise false
+ * @returns {string} Returns an error message if the tweet is not valid
  */
 const isTweetValid = function (tweet) {
+  let errorMessage = null;
+
   // Trim whitespace from the Tweet.
   tweet = tweet.trim();
 
   if (!tweet) {
-    alert("Message cannot be empty.");
-    return false;
+    return("Message cannot be empty.");
   }    
  
   if (tweet.length > 140) {
-    alert("Message must not exceed 140 characters.");
-    return false;
+    return("Message must not exceed 140 characters.");
   }
 
-  return true;
+  return errorMessage;
 }
+
+
+const showErrorMessage = function(errorMessage) {
+  console.log(errorMessage);
+  $("#error-message-container").slideDown(400);
+  $("#error-message").text(errorMessage);
+};
+
+const hideErrorMessage = function() {
+  $("#error-message-container").slideUp(400);
+  $("#error-message").text("");
+};
