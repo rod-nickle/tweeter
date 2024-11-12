@@ -51,44 +51,48 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="header">
-    <div class="avatar">
-      <img src="/images/profile-hex.png">
-    </div>
-    <div class="current-user">
-      <h2>Rod Nickle</h2>
-    </div>
-  </div>
+  <!-- Header + Main Content-->
+  <div class="main-container">
 
-  <!-- Main Content -->
-  <main class="container">
-
-    <!-- New Tweet Section -->
-    <section id="new-tweet-container">
-      <div id="error-message-container" style="display: none">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <span id="error-message"></span>
-        <i class="fa-solid fa-triangle-exclamation"></i>
+    <!-- Header -->
+    <div class="header">
+      <div class="avatar">
+        <img src="/images/profile-hex.png">
       </div>
-      <form class="new-tweet-form">
-        <div class="new-tweet">
-          <textarea class="new-tweet-text-box" name="text" id="tweet-text"
-            placeholder="What are you humming about?"></textarea>
-        </div>
-        <div class="new-tweet-footer">
-          <button class="tweet-button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+      <div class="current-user">
+        <h2>Rod Nickle</h2>
+      </div>
+    </div>
 
-    <!-- Past Tweets Section -->
-    <!-- Articles are appended here when the page is loaded.  See loadTweets(). -->
-    <section id="tweets-container">
-    </section>
+    <!-- Main Content -->
+    <main class="container">
 
-  </main>
+      <!-- New Tweet Section -->
+      <section id="new-tweet-container">
+        <div id="error-message-container" style="display: none">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span id="error-message"></span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+          <form class="new-tweet-form">
+            <div class="new-tweet">
+              <textarea class="new-tweet-text-box" name="text" id="tweet-text"
+                placeholder="What are you humming about?"></textarea>
+            </div>
+            <div class="new-tweet-footer">
+              <button class="tweet-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+      </section>
+
+      <!-- Past Tweets Section -->
+      <!-- Articles are appended here when the page is loaded.  See loadTweets(). -->
+      <section id="tweets-container">
+      </section>
+      
+    </main>
+  </div>
 
 </body>
 
